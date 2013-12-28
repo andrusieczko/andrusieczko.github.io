@@ -24,6 +24,9 @@
     .menu-item {
       height: 100%;
     }
+    .my-menu-item {
+      height: 100%;
+    }
   </style>
   <script>
   $(function() {
@@ -44,8 +47,9 @@
 
     // Example 3 - options
     $('.triangle-menu3').triangleMenu({
-      triangleWidth: 5,
+      triangleWidth: 10,
       triangleHeight: 25,
+      menuItemSelector: '.my-menu-item',
       activate: function(e, index) {
         $('.selected-text-options').html('Selected: ' + index);
       }
@@ -202,10 +206,10 @@ $('.triangle-menu').triangleMenu({
               
                 <div class="span4">
                   <div class="row-fluid triangle-menu triangle-menu3">
-                    <div class="span3 menu-item">1</div>
-                    <div class="span3 menu-item">2</div>
-                    <div class="span3 menu-item">3</div>
-                    <div class="span3 menu-item">4</div>
+                    <div class="span3 my-menu-item">1</div>
+                    <div class="span3 my-menu-item">2</div>
+                    <div class="span3 my-menu-item">3</div>
+                    <div class="span3 my-menu-item">4</div>
                   </div>
                   <span class="selected-text-options">Selected: 1</span>
                 </div>
@@ -213,10 +217,10 @@ $('.triangle-menu').triangleMenu({
                 <div class="span4">
                   <pre class="prettyprint lang-html">
 &lt;div class="row-fluid triangle-menu"&gt;
-  &lt;div class="span3 menu-item"&gt;1&lt;/div&gt;
-  &lt;div class="span3 menu-item"&gt;2&lt;/div&gt;
-  &lt;div class="span3 menu-item"&gt;3&lt;/div&gt;
-  &lt;div class="span3 menu-item"&gt;4&lt;/div&gt;
+  &lt;div class="span3 my-menu-item"&gt;1&lt;/div&gt;
+  &lt;div class="span3 my-menu-item"&gt;2&lt;/div&gt;
+  &lt;div class="span3 my-menu-item"&gt;3&lt;/div&gt;
+  &lt;div class="span3 my-menu-item"&gt;4&lt;/div&gt;
 &lt;/div&gt;
 &lt;span class="selected-text"&gt;Selected: 1&lt;/span&gt;
 </pre>
@@ -228,6 +232,7 @@ $('.triangle-menu').triangleMenu({
 $('.triangle-menu').triangleMenu({
   triangleWidth: 5,
   triangleHeight: 25,
+  menuItemSelector: '.my-menu-item',
   activate: function(e, index) {
     $('.selected-text').html('Selected: ' + index);
   }
@@ -240,7 +245,7 @@ $('.triangle-menu').triangleMenu({
   background: green;
   text-align: center;
 }
-.menu-item {
+.my-menu-item {
   height: 100%;
 }
 </pre>
