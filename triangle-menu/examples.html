@@ -1,0 +1,263 @@
+<html>
+
+<head>
+  <title>triangle-menu example</title>
+
+  <!-- required libraries -->
+  <script src="libs/jquery-1.10.2.min.js"></script>
+  <script src="libs/clip-path-polygon.min.js"></script>
+  <script src="triangle-menu.min.js"></script>
+  
+  <!-- Prettify and Bootstrap used only for demo purposes -->
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-responsive.min.css">
+
+  <style>
+    .triangle-menu {
+      height: 100px;
+      width: 400px;
+      background: green;
+      text-align: center;
+    }
+    .menu-item {
+      height: 100%;
+    }
+  </style>
+  <script>
+  $(function() {
+
+    // Example 1 - table
+    $('.triangle-menu1').triangleMenu({
+      activate: function(e, index) {
+        $('.selected-text').html('Selected: ' + index);
+      }
+    });
+
+    // Example 2 - bootstrap
+    $('.triangle-menu2').triangleMenu({
+      activate: function(e, index) {
+        $('.selected-text-bootstrap').html('Selected: ' + index);
+      }
+    });
+
+    // Example 3 - options
+    $('.triangle-menu3').triangleMenu({
+      triangleWidth: 5,
+      triangleHeight: 25,
+      activate: function(e, index) {
+        $('.selected-text-options').html('Selected: ' + index);
+      }
+    });
+
+
+  });
+  </script>
+</head>
+
+  <body>
+
+    <div class="hero-unit">
+      <h3>triangle-menu</h3>
+      <h5>hosted on <a href="https://github.com/andrusieczko/triangle-menu">GitHub</a></h5>
+    </div>
+
+    <div class="row-fluid">
+
+      <div class="span10 offset1">
+
+        <div>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#vanilla" data-toggle="tab">As pure table</a></li>
+            <li><a href="#bootstrap" data-toggle="tab">Using Bootstrap2</a></li>
+            <li><a href="#options" data-toggle="tab">Options</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="vanilla">
+
+              <!-- TABLE -->
+
+              <div class="row-fluid">
+                <div class="span4">
+                  <table class="triangle-menu triangle-menu1">
+                    <tbody>
+                      <tr>
+                        <td class="menu-item">
+                          1
+                        </td>
+                        <td class="menu-item">
+                          2
+                        </td>
+                        <td class="menu-item">
+                          3
+                        </td>
+                        <td class="menu-item">
+                          4
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <span class="selected-text">Selected: 1</span>
+                </div>
+                <div class="span4">
+                   <pre class="prettyprint lang-html">
+&lt;table class="triangle-menu"&gt;
+  &lt;tr&gt;
+    &lt;td class="menu-item"&gt;
+      1
+    &lt;/td&gt;
+    &lt;td class="menu-item"&gt;
+      2
+    &lt;/td&gt;
+    &lt;td class="menu-item"&gt;
+      3
+    &lt;/td&gt;
+    &lt;td class="menu-item"&gt;
+      4
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;span class="selected-text"&gt;Selected: 1&lt;/span&gt;
+</pre>
+                </div>
+                <div class="span4">
+                   <pre class="prettyprint lang-javascript">
+$('.triangle-menu').triangleMenu({
+  activate: function(e, index) {
+    $('.selected-text').html('Selected: ' + index);
+  }
+});
+</pre>
+                   <pre class="prettyprint lang-css">
+.triangle-menu {
+  height: 100px;
+  width: 400px;
+  background: green;
+  text-align: center;
+}
+</pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="bootstrap">
+
+              <!-- BOOTSTRAP -->
+              <div class="row-fluid">
+                <div class="span4">
+
+                  <div class="row-fluid triangle-menu triangle-menu2">
+                    <div class="span3 menu-item">1</div>
+                    <div class="span3 menu-item">2</div>
+                    <div class="span3 menu-item">3</div>
+                    <div class="span3 menu-item">4</div>
+                  </div>
+                  <span class="selected-text-bootstrap">Selected: 1</span>
+
+                </div>
+                <div class="span4">
+
+                  <pre class="prettyprint lang-html">
+&lt;div class="row-fluid triangle-menu"&gt;
+  &lt;div class="span3 menu-item"&gt;1&lt;/div&gt;
+  &lt;div class="span3 menu-item"&gt;2&lt;/div&gt;
+  &lt;div class="span3 menu-item"&gt;3&lt;/div&gt;
+  &lt;div class="span3 menu-item"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+&lt;span class="selected-text"&gt;Selected: 1&lt;/span&gt;
+</pre>
+
+                </div>
+                <div class="span4">
+
+                  <pre class="prettyprint lang-javascript">
+$('.triangle-menu').triangleMenu({
+  activate: function(e, index) {
+    $('.selected-text').html('Selected: ' + index);
+  }
+});
+</pre>
+                  <pre class="prettyprint lang-css">
+.triangle-menu {
+  height: 100px;
+  width: 400px;
+  background: green;
+  text-align: center;
+}
+.menu-item {
+  height: 100%;
+}
+</pre>
+
+                </div>
+              </div>
+
+            </div>
+            
+            <!-- OPTIONS -->
+            <div class="tab-pane fade" id="options">
+              
+              <div class="row-fluid">
+              
+                <div class="span4">
+                  <div class="row-fluid triangle-menu triangle-menu3">
+                    <div class="span3 menu-item">1</div>
+                    <div class="span3 menu-item">2</div>
+                    <div class="span3 menu-item">3</div>
+                    <div class="span3 menu-item">4</div>
+                  </div>
+                  <span class="selected-text-options">Selected: 1</span>
+                </div>
+
+                <div class="span4">
+                  <pre class="prettyprint lang-html">
+&lt;div class="row-fluid triangle-menu"&gt;
+  &lt;div class="span3 menu-item"&gt;1&lt;/div&gt;
+  &lt;div class="span3 menu-item"&gt;2&lt;/div&gt;
+  &lt;div class="span3 menu-item"&gt;3&lt;/div&gt;
+  &lt;div class="span3 menu-item"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+&lt;span class="selected-text"&gt;Selected: 1&lt;/span&gt;
+</pre>
+                </div>
+                
+                <div class="span4">
+                  
+                  <pre class="prettyprint lang-javascript">
+$('.triangle-menu').triangleMenu({
+  triangleWidth: 5,
+  triangleHeight: 25,
+  activate: function(e, index) {
+    $('.selected-text').html('Selected: ' + index);
+  }
+});
+</pre>
+                  <pre class="prettyprint lang-css">
+.triangle-menu {
+  height: 100px;
+  width: 400px;
+  background: green;
+  text-align: center;
+}
+.menu-item {
+  height: 100%;
+}
+</pre>
+
+                </div>
+              
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </body>
+
+</html>
